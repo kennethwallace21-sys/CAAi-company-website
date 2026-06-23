@@ -11,6 +11,50 @@
   <title>Catalyst Applied AI — AI That Runs Where Your Data Lives</title>
   <meta name="description"
     content="Catalyst Applied AI deploys governed, auditable AI systems inside your environment. Air-gapped to cloud. Full stack. Every output cited and logged." />
+  <link rel="canonical" href="https://catalystappliedai.com/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#070c14" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/assets/caai-mark.svg" />
+  <link rel="apple-touch-icon" href="/assets/caai-mark.svg" />
+
+  <!-- Open Graph / LinkedIn / Slack / iMessage -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Catalyst Applied AI" />
+  <meta property="og:title" content="Catalyst Applied AI — AI That Runs Where Your Data Lives" />
+  <meta property="og:description"
+    content="Governed, auditable AI deployed inside your environment — air-gapped to cloud. Full stack. Every output cited and logged." />
+  <meta property="og:url" content="https://catalystappliedai.com/" />
+  <meta property="og:image" content="https://catalystappliedai.com/assets/og-cover.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Catalyst Applied AI — AI that runs where your data lives." />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Catalyst Applied AI — AI That Runs Where Your Data Lives" />
+  <meta name="twitter:description"
+    content="Governed, auditable AI deployed inside your environment — air-gapped to cloud. Every output cited and logged." />
+  <meta name="twitter:image" content="https://catalystappliedai.com/assets/og-cover.png" />
+
+  <!-- Organization structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Catalyst Applied AI",
+    "alternateName": "CAAi",
+    "url": "https://catalystappliedai.com/",
+    "logo": "https://catalystappliedai.com/assets/caai-mark.svg",
+    "description": "Catalyst Applied AI deploys governed, auditable AI systems inside your environment — from air-gapped to cloud. Full stack. Every output cited and logged.",
+    "email": "contact@catalystappliedai.com",
+    "memberOf": { "@type": "Organization", "name": "NVIDIA Inception Program" },
+    "areaServed": "US",
+    "knowsAbout": ["Secure RAG", "Air-gapped AI", "AI governance", "FedRAMP", "NIST AI RMF", "Federal AI deployment"]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -955,6 +999,188 @@
         padding: 12px 20px;
       }
     }
+
+    /* ─── LEAD MODAL ─── */
+    .lead-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 400;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(5, 9, 16, 0.72);
+      backdrop-filter: blur(14px);
+    }
+
+    .lead-overlay.open {
+      display: flex;
+    }
+
+    .lead-panel {
+      position: relative;
+      width: min(100%, 600px);
+      max-height: calc(100vh - 48px);
+      overflow: auto;
+      border-radius: 18px;
+      border: 1px solid rgba(91, 224, 255, 0.18);
+      background: linear-gradient(180deg, var(--ink3), var(--ink));
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+      padding: 32px;
+    }
+
+    .lead-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--white);
+      font-size: 15px;
+      cursor: pointer;
+      transition: background .15s, border-color .15s;
+    }
+
+    .lead-close:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .lead-panel .label {
+      margin-bottom: 10px;
+    }
+
+    .lead-panel h3 {
+      font-family: 'Instrument Serif', serif;
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .lead-panel .lead-copy {
+      font-size: 14px;
+      color: var(--fog);
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    .lead-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .lead-field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .lead-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .lead-field label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--fog);
+    }
+
+    .lead-field input,
+    .lead-field select,
+    .lead-field textarea {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(7, 12, 20, 0.8);
+      color: var(--white);
+      padding: 12px 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      outline: none;
+      transition: border-color .15s;
+    }
+
+    .lead-field input:focus,
+    .lead-field select:focus,
+    .lead-field textarea:focus {
+      border-color: rgba(91, 224, 255, 0.45);
+    }
+
+    .lead-field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .lead-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .lead-status {
+      font-size: 13px;
+      color: var(--fog);
+      line-height: 1.5;
+      flex: 1;
+      min-width: 140px;
+    }
+
+    .lead-status.ok {
+      color: var(--green);
+    }
+
+    .lead-status.err {
+      color: #ff5b5b;
+    }
+
+    .lead-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 13px 24px;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      background: var(--white);
+      color: var(--ink);
+      cursor: pointer;
+      transition: transform .15s, box-shadow .2s;
+    }
+
+    .lead-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(91, 224, 255, 0.18);
+    }
+
+    .lead-submit:disabled {
+      opacity: .6;
+      cursor: default;
+      transform: none;
+      box-shadow: none;
+    }
+
+    @media (max-width: 600px) {
+      .lead-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lead-panel {
+        padding: 26px 20px;
+      }
+    }
   </style>
 </head>
 
@@ -1091,7 +1317,7 @@
             <span class="oc-tag">Air-Gapped</span>
             <span class="oc-tag">Authorized Cloud</span>
           </div>
-          <a href="#contact" class="oc-link">Request a Tier Review →</a>
+          <a href="#contact" class="oc-link" data-intent="Secure RAG as a Service">Request a Tier Review →</a>
         </div>
 
         <div class="offering-card">
@@ -1106,7 +1332,7 @@
             <span class="oc-tag">Logistics</span>
             <span class="oc-tag">Operations</span>
           </div>
-          <a href="#contact" class="oc-link">See the Architecture →</a>
+          <a href="#contact" class="oc-link" data-intent="Agentic Workflow Platforms">See the Architecture →</a>
         </div>
 
         <div class="offering-card">
@@ -1121,7 +1347,7 @@
             <span class="oc-tag">NIST AI RMF</span>
             <span class="oc-tag">ISSO Ready</span>
           </div>
-          <a href="#contact" class="oc-link">Get the Brief →</a>
+          <a href="#contact" class="oc-link" data-intent="SafeGuard — Governance Middleware">Get the Brief →</a>
         </div>
 
         <div class="offering-card">
@@ -1137,7 +1363,7 @@
             <span class="oc-tag">Supply Chain</span>
             <span class="oc-tag">Multi-Location</span>
           </div>
-          <a href="#contact" class="oc-link">See Case Study →</a>
+          <a href="#contact" class="oc-link" data-intent="Operational Intelligence">See Case Study →</a>
         </div>
 
         <div class="offering-card">
@@ -1153,7 +1379,7 @@
             <span class="oc-tag">GSA MAS</span>
             <span class="oc-tag">SOC 2</span>
           </div>
-          <a href="#contact" class="oc-link">Join the Cohort →</a>
+          <a href="#contact" class="oc-link" data-intent="FedRAMP Authorized AI PaaS">Join the Cohort →</a>
         </div>
 
       </div>
@@ -1343,6 +1569,172 @@
       <p>NVIDIA Inception Member · Built on Nemotron, Arctic Embed, NeMo Curator</p>
     </div>
   </footer>
+
+  <!-- LEAD MODAL -->
+  <div class="lead-overlay" id="leadOverlay" aria-hidden="true">
+    <div class="lead-panel" role="dialog" aria-modal="true" aria-labelledby="leadTitle">
+      <button type="button" class="lead-close" id="leadClose" aria-label="Close">✕</button>
+      <div class="label">Book a Demo</div>
+      <h3 id="leadTitle">See it running in your environment.</h3>
+      <p class="lead-copy">Tell us your environment and mission. We'll map you to the right deployment tier and show
+        you a working proof of concept — not a deck. Replies within one business day.</p>
+      <form id="leadForm">
+        <div class="lead-grid">
+          <div class="lead-field">
+            <label for="lf-name">Name</label>
+            <input id="lf-name" name="name" autocomplete="name" required />
+          </div>
+          <div class="lead-field">
+            <label for="lf-email">Work Email</label>
+            <input id="lf-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="lead-field">
+            <label for="lf-org">Organization</label>
+            <input id="lf-org" name="organization" autocomplete="organization" />
+          </div>
+          <div class="lead-field">
+            <label for="lf-interest">Interest</label>
+            <select id="lf-interest" name="interest">
+              <option>Secure RAG as a Service</option>
+              <option>Agentic Workflow Platforms</option>
+              <option>SafeGuard — Governance Middleware</option>
+              <option>Operational Intelligence</option>
+              <option>FedRAMP Authorized AI PaaS</option>
+              <option>General inquiry</option>
+            </select>
+          </div>
+          <div class="lead-field full">
+            <label for="lf-message">What do you want to deploy or evaluate?</label>
+            <textarea id="lf-message" name="message" required></textarea>
+          </div>
+        </div>
+        <div class="lead-actions">
+          <div class="lead-status" id="leadStatus" aria-live="polite"></div>
+          <button type="submit" class="lead-submit" id="leadSubmit">Send Request →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      // ── Lead delivery config ──────────────────────────────────────────────
+      // Get a free key in ~60s at https://web3forms.com, paste it below, and
+      // submissions email straight to contact@catalystappliedai.com.
+      // Until then, the form gracefully falls back to a pre-filled email.
+      var WEB3FORMS_KEY = "REPLACE_WITH_WEB3FORMS_ACCESS_KEY";
+      var SALES_EMAIL = "contact@catalystappliedai.com";
+
+      var overlay = document.getElementById("leadOverlay");
+      var panel = overlay.querySelector(".lead-panel");
+      var form = document.getElementById("leadForm");
+      var statusEl = document.getElementById("leadStatus");
+      var submitBtn = document.getElementById("leadSubmit");
+      var interestEl = document.getElementById("lf-interest");
+      var lastFocused = null;
+
+      function setInterest(text) {
+        if (!text) return;
+        for (var i = 0; i < interestEl.options.length; i++) {
+          if (interestEl.options[i].text === text) { interestEl.selectedIndex = i; return; }
+        }
+      }
+
+      function open(intent) {
+        lastFocused = document.activeElement;
+        setInterest(intent);
+        overlay.classList.add("open");
+        overlay.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+        document.getElementById("lf-name").focus();
+      }
+
+      function close() {
+        overlay.classList.remove("open");
+        overlay.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        statusEl.textContent = "";
+        statusEl.className = "lead-status";
+        if (lastFocused && lastFocused.focus) lastFocused.focus();
+      }
+
+      // Open from any CTA. data-intent (or button text) prefills the Interest field.
+      var triggers = document.querySelectorAll(
+        '.btn-cta, .nav-btn, .oc-link, a[href^="mailto:"]'
+      );
+      triggers.forEach(function (el) {
+        el.addEventListener("click", function (e) {
+          e.preventDefault();
+          open(el.getAttribute("data-intent"));
+        });
+      });
+
+      document.getElementById("leadClose").addEventListener("click", close);
+      overlay.addEventListener("click", function (e) { if (e.target === overlay) close(); });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && overlay.classList.contains("open")) close();
+      });
+
+      function mailtoFallback(p) {
+        var body =
+          "Name: " + p.name + "\n" +
+          "Email: " + p.email + "\n" +
+          "Organization: " + p.organization + "\n" +
+          "Interest: " + p.interest + "\n\n" +
+          p.message;
+        window.location.href =
+          "mailto:" + SALES_EMAIL +
+          "?subject=" + encodeURIComponent("Demo request — " + p.interest) +
+          "&body=" + encodeURIComponent(body);
+      }
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+        var payload = {
+          name: form.name.value.trim(),
+          email: form.email.value.trim(),
+          organization: form.organization.value.trim(),
+          interest: form.interest.value,
+          message: form.message.value.trim(),
+          page_url: window.location.href
+        };
+
+        // No key configured yet → open a pre-filled email instead of failing.
+        if (WEB3FORMS_KEY.indexOf("REPLACE_") === 0) {
+          mailtoFallback(payload);
+          statusEl.textContent = "Opening your email client…";
+          statusEl.className = "lead-status";
+          return;
+        }
+
+        submitBtn.disabled = true;
+        statusEl.textContent = "Sending…";
+        statusEl.className = "lead-status";
+        try {
+          var res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify(Object.assign({
+              access_key: WEB3FORMS_KEY,
+              subject: "Demo request — " + payload.interest,
+              from_name: "Catalyst Applied AI website"
+            }, payload))
+          });
+          var data = await res.json();
+          if (!res.ok || !data.success) throw new Error(data.message || "Submission failed.");
+          statusEl.textContent = "Thanks — we'll reply within one business day.";
+          statusEl.className = "lead-status ok";
+          form.reset();
+          setTimeout(close, 2200);
+        } catch (err) {
+          statusEl.textContent = "Couldn't send. Email us at " + SALES_EMAIL + ".";
+          statusEl.className = "lead-status err";
+        } finally {
+          submitBtn.disabled = false;
+        }
+      });
+    })();
+  </script>
 
 </body>
 
